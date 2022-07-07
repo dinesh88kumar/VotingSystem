@@ -5,6 +5,8 @@ import { useHistory, Route } from "react-router-dom";
 window.arid = "";
 window.arpassword = "";
 window.voterslist = "";
+window.electionlist = "";
+window.candidatelist = "";
 function AdminLogin() {
 
     let history = useHistory();
@@ -32,7 +34,12 @@ function AdminLogin() {
             ).then((response) => (window.voterslist = response.data)
             );
 
-
+            await axios.get("http://localhost:8030/getElections"
+            ).then((response) => (window.electionlist = response.data)
+            );
+            await axios.get("http://localhost:8030/getCandidates"
+            ).then((response) => (window.candidatelist = response.data)
+            );
 
 
         }
