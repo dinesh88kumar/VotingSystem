@@ -23,6 +23,7 @@ function Candidate() {
                     designation: designation,
                     bio: bio,
                     electionid: electionid,
+                    counts: 0
 
                 });
 

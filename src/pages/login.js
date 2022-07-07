@@ -29,6 +29,12 @@ function Login() {
             } else {
                 alert("User Login FAILED");
             }
+            await axios.get("http://localhost:8030/getElections"
+            ).then((response) => (window.electionlist = response.data)
+            );
+            await axios.get("http://localhost:8030/getCandidates"
+            ).then((response) => (window.candidatelist = response.data)
+            );
 
 
 

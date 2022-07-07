@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Switch, useLocation, useParams 
 import Vote from './vote';
 import Dashboard from './dashboard';
 import Navbar from '../components/navbar';
+import Result from './result';
 
 
 function Home() {
@@ -17,7 +18,7 @@ function Home() {
 
                 <Route exact path="/vote" component={Vote} />
                 <Route exact path="/dashboard" component={Dashboard} />
-
+                <Route exact path="/result" component={Result} />
             </Switch>
         </Router>
     );
