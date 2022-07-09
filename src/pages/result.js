@@ -47,9 +47,8 @@ function Result() {
                             const list = (
                                 <>
                                     <ul>
-                                        <li>name: {e.name}</li>
-                                        <li>email: {e.email}</li>
-                                        <li>designation: {e.designation}</li>
+                                        <h2>name: {e.name}</h2>
+
                                         <h1>Counts: {e.counts}</h1>
                                     </ul>
                                     <hr />

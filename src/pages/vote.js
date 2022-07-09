@@ -17,20 +17,27 @@ function Vote() {
             }
         });
     }
-    function onVote(a) {
+    function onVote(id, name, email, des, bio, eleid, c) {
 
-        var count = 0;
+
         console.log("called")
-        axios.get("http://localhost:8030/candidate/" + a
-        ).then((response) => (count = response.data.counts));
-        count = count + 1;
-        console.log("here comes" + count)
-        axios.put("http://localhost:8030/editC/" + a, {
+        // axios.get("http://localhost:8030/candidate/" + a
+        // ).then((response) => ());
 
-            counts: count
+        axios.put("http://localhost:8030/editC/" + id, {
+
+            name: name,
+            email: email,
+            designation: des,
+            bio: bio,
+            electionid: eleid,
+            counts: c + 1,
 
         }
-        );
+        )
+
+
+
 
     }
     return (
@@ -74,7 +81,7 @@ function Vote() {
                                         <li>designation: {e.designation}</li>
 
                                         <br></br>
-                                        <button onClick={() => onVote(e.id)}>Vote</button>
+                                        <button onClick={() => onVote(e.id, e.name, e.email, e.designation, e.bio, e.electionid, e.counts)}>Vote</button>
                                     </ul>
                                     <hr />
                                 </>
